@@ -4,6 +4,10 @@ The repository contains code of search from predefined dataset provided by Algol
 
 The [airport dataset](https://github.com/algolia/datasets) has been used for proof of concept. The given search string list relevant result on screen from indexed data.
 
+## Demo
+
+[https://avneetsingh4555.github.io/algolia-airports-search/](https://avneetsingh4555.github.io/algolia-airports-search/)
+
 ## Development Setup
 
 ### Prerequisites
