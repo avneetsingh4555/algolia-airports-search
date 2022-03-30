@@ -1,0 +1,54 @@
+<header>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <strong>Algolia Search</strong>
+      </a>
+    </div>
+  </div>
+</header>
+<main>
+  <ais-instantsearch [config]="config">
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Search Airports Globally</h1>
+          <p class="lead text-muted">
+            Algolia search demo for searching worldwide airports.
+          </p>
+          <div
+            class="row height d-flex justify-content-center align-items-center"
+          >
+            <div class="col-md-8 search-box-column">
+              <ais-search-box></ais-search-box>
+              <ais-voice-search></ais-voice-search>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <ais-hits>
+          <ng-template let-hits="hits">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <div class="col" *ngFor="let hit of hits">
+                <div class="card shadow-sm">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      {{ hit.name }} - {{ hit.iata_code }}
+                    </h5>
+                    <ais-highlight attribute="name" [hit]="hit"></ais-highlight>
+                    <p class="card-text text-muted">
+                      {{ hit.city }}, {{ hit.country }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ais-hits>
+      </div>
+    </div>
+  </ais-instantsearch>
+</main>
